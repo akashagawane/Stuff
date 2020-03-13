@@ -1,0 +1,81 @@
+UVM
+-------------------------------------------------------------------------------
+vcs -sverilog -ntb_opts uvm hello.sv
+/simv +UVM_TESTNAME=<test_name>
+https://www.youtube.com/channel/UCKqM2eTkU0wy_gDjZQwdqkw/playlists
+-------------------------------------------------------------------------------
+
+
+VCS
+https://hdvacademy.blogspot.in/2014/07/simulation-using-synopsys-vcsdve.html
+vcs -Mupdate -f file_list.f -debug_all -sverilog -R +vcs+dumpvars+test.vcd
+Dve & and open database in File option
+./simv -gui
+vcs test.v -V -l logfile -R +vcs+dumpvars+test.vcd
+initial
+begin
+$dumpfile("prop_chk_a.vcd");
+$dumpvars;
+end
+-------------------------------------------------------------------------------
+
+
+QuestaSim
+MGLS_LICENSE_FILE 1717@xhdcadgi40 -> set in terminal if required
+https://www.eda.ncsu.edu/wiki/File:WaveformWindow1.PNG
+http://www.tkt.cs.tut.fi/tools/public/tutorials/mentor/modelsim/getting_started/gsms.html
+vsim -c -do run_questa.do
+vsim -view vsim.wlf &
+vcd file myvcd1.vcd
+vcd add -r /sim_minimips/*
+vcd dumpports -file golden_test_generic_0.vcd /testbench/DUT/my_ip_inst/*
+vcd dumpportslimit 50000000 golden_test_generic_0.vcd
+
+#######
+vlog *.v
+vlog -sv *.sv
+vsim -novopt <top_name>
+Log -r /*
+Misc
+Thursday, November 15, 2018 11:51 AM
+Work Page 1Log -r /*
+Run 200ns/ -alle
+#######
+
+vlib work
+vlog *.v
+vopt +acc test_sm -o opt_test_gold
+vsim -wlf gold.wlf opt_test_gold
+add wave *
+run 750 ns
+quit -sim
+
+######## Assertion #########
+vlog -sv <design_file>
+vsim -assert <top_module_name>
+do add_waves.do
+View assertions
+run -all
+
+######### Coverage #########
+vlog *.v
+vopt +cover test_sm -o test_sm_opt
+vsim -coverage test_sm_opt
+-------------------------------------------------------------------------------
+
+
+XSIM
+xvlog print_enum.sv -sv
+xelab print_enum -s top
+Xsim top -R
+-------------------------------------------------------------------------------
+
+
+DC Compiler
+set symbol_library /wv/hlstools/synopsys/syn/J-2014.09-SP4/libraries/syn/tc6a_cbacore.sdb
+set target_library /wv/hlstools/synopsys/syn/J-2014.09-SP4/libraries/syn/tc6a_cbacore.db
+set link_library [list "*" $target_library]
+analyze -format sverilog test.sv
+elaborate test
+compile
+write -format verilog -output test_out.v
