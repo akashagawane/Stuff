@@ -31,7 +31,7 @@ Find all specific file and merged into one
   a. find dir_name '*.mp3' -exec cp -vuni '{}' "../dest_dir" ";"
   b. From <http://stackoverflow.com/questions/15617016/cp-copy-all-files-with-a-certain-extension-from-all-subdirectories>
 
-find . -name \*.xpe -exec cp {} $work1/trendcheck/ \; => Copy xpe files
+find . -name \*.<file_extension> -exec cp {} <copy_path>/ \; => Find and copy files to destination
 
 cat /tmp/lp12 | head -1 | awk -F/ '{print $(NF-1)}' => dir part second last name
 
@@ -93,6 +93,9 @@ Find <path> -mtime -1 -> to search file modified recently -1 is important -mtime
 
 egrep -ri 'svtb' --include=\*.ipbatch ./ -> Grep in same dir again n again
 
+cp -rfL <source_path> <dest_path> , where L -> for copying the soft links
+
+
 Adder to Subtractor https://www.quora.com/in/How-can-a-full-adder-be-converted-to-a-full-subtractor-with-theaddition-of-one-inverter-circuit
 
 SIMULATOR:
@@ -122,3 +125,5 @@ Useful links
 SDAccel https://gitenterprise.xilinx.com/heeran/apps/tree/2017.1_dev
 Verilog https://www.youtube.com/user/MrVerilog/videos
 AXI https://www.youtube.com/watch?v=7dtfql3962I
+System C: http://homepages.cae.wisc.edu/~ece734/SystemC/
+Reading : https://www.csl.cornell.edu/courses/ece4750/
