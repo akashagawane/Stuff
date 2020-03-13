@@ -8,12 +8,8 @@ set showmatch
 set incsearch
 set nocompatible
 set backspace=indent,eol,start
-set backspace=indent,eol,start
 syntax on
-"if has("gui_running")
-"set guifont=Monospace:h10
-"endif
-"
+
 noremap <leader>1 1gt
 noremap! <C-?> <C-h>
 noremap <leader>2 2gt
