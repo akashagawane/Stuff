@@ -1,0 +1,124 @@
+vncserver -kill :14
+vncserver -geometry 1590x890
+vncserver -geometry 1900x1080, xrandr -s 1920x1080
+vncconfig -nowin & => to copy & paste
+
+https://www.tcl.tk/man/tcl8.5/tutorial/tcltutorial.html
+
+OLE:
+  http://stackoverflow.com/questions/27613878/list-of-perl-commands-to-manipulate-windows-excel-withwin32olemodule
+  http://stackoverflow.com/questions/27613878/list-of-perl-commands-to-manipulate-windows-excel-withwin32ole-module
+  http://www.thegeekstuff.com/2011/12/perl-and-excel/
+  https://prezi.com/qjrgkadg4-i3/excel-reading-and-writing-in-perl/
+  http://www.tek-tips.com/faqs.cfm?fid=6715
+  http://docs.activestate.com/activeperl/5.8/faq/Windows/ActivePerl-Winfaq12.html
+
+find dir1 dir2 dir3 dir4 -type d -exec cp header.html {} \; =>
+  a. First, I use the Linux find command, and I tell it to look in four sub-directories (dir1, dir2, dir3 and dir4).
+  b. I tell it to find only directories (-type d).
+  c. I then issue the Linux copy (cp) command, and copy the file header.html to each directory that is found, one directory at a time
+
+for f in `find . -maxdepth 1 -mindepth 1 -type d`; do
+  cd "$f"
+  <your job here>
+  Done
+Explanation : find . -maxdepth 1 -mindepth 1 -type d : Only find directories with a maximum recursive depth of 1
+(only the subdirectories of $1) and minimum depth of 1 (excludes current folder .)
+
+For copying all CSV file into one file run into cmd………………… copy *.csv all.csv ==> for WINDOWS
+
+Find all specific file and merged into one
+  a. find dir_name '*.mp3' -exec cp -vuni '{}' "../dest_dir" ";"
+  b. From <http://stackoverflow.com/questions/15617016/cp-copy-all-files-with-a-certain-extension-from-all-subdirectories>
+
+find . -name \*.xpe -exec cp {} $work1/trendcheck/ \; => Copy xpe files
+
+cat /tmp/lp12 | head -1 | awk -F/ '{print $(NF-1)}' => dir part second last name
+
+find -type d -name ".Xil" -exec rm -r "{}" \;
+
+find . -type f -name "run.sh" -exec sed -i 's/tclsh/#tclsh/g' {} + => find file and replace text
+
+perl -pe '$_ = uc($_)' input.txt > output.txt => to convert Upper case
+perl -pe '$_ = uc($_)' input.txt > output.txt => Lower Case
+
+Getting unique string from files
+  comm -3 f1 f2 --- show all of the lines that are unique in f1 and f2
+  comm -1 f1 f2 --- show all of the lines that are unique in f2 or common to both
+  comm -12 f1 f2 --- show all of the lines that are common to both files
+  comm -23 f1 f2 --- show all of the lines that are only present in file1
+  From <https://www.quora.com/What-is-the-best-Unix-command-to-compare-two-different-text-files-in-a-comprehensive-manner>
+
+Sed http://www.grymoire.com/Unix/Sed.html
+
+find . ! -name 'example_ibert_routed.dcp' -type f -exec rm -f {} + => To remove all files expect .dcp
+
+Formula for #DIV error =IF(B3=0,0,(C3-B3)/B3)
+  http://superuser.com/questions/247127/what-is-and-in-linux/247131
+
+find -name "*.csv" | xargs cp --parents -t /target =>To find specify files into dir n subdirfind
+  http://freeengineer.org/learnUNIXin10minutes.html#Pipes
+  http://superuser.com/questions/709236/how-append-a-string-at-the-end-of-all-lines
+
+find ./ -type f -exec sed -i -e 's/apple/orange/g' {} \;
+  http://stackoverflow.com/questions/6758963/find-and-replace-with-sed-in-directory-and-sub-directories>
+  https://www.cyberciti.biz/faq/grep-regular-expressions/
+  http://pleac.sourceforge.net/pleac_tcl/patternmatching.html
+
+Add text to file at certain line in Linux
+  a. perl -pi -e 'if($.==14){s/\n/\navatar\n/g}if(eof){$.=0}' MakeFile*
+  b. sed -i "15i avatar" Makefile.txt
+  c. From <http://stackoverflow.com/questions/15157659/add-text-to-file-at-certain-line-in-linux?rq=1>
+  d. To delete sed -i.bck '5,10d;12d' <file_name> #5,10d => from line 5 to 10 delete
+
+Add specific line into file
+  sed '3iline 3' filename.txt
+  3: is the line where you want the new line inserted
+  i: is the parameter that says sed to insert the line.
+  line 3: is the text to be added in that position.
+  filename: is the file where sed is going to act.
+  From <https://www.garron.me/en/linux/add-line-to-specific-position-in-file-linux.html>
+
+Two combine two cell in excel =A1&""&B1
+
+awk '{for(i=NF;i>=1;i--) printf "%s ", $i;print ""}' <file_name> reversre file character
+
+Protocol code http://syswip.com/downloads
+For all language :- http://www.indiaparinam.com/c-programming-language
+
+fold -s -w80 file -> To limit 80 while printing { -s: tells fold to break only at spaces, -w80: declared the width, fold: also reads from stdin }
+
+Find <path> -mtime -1 -> to search file modified recently -1 is important -mtime for days/ -mmin for minutes
+  http://www.theunixschool.com/2010/08/find-files-modified-in-last-x-days-and.html
+
+egrep -ri 'svtb' --include=\*.ipbatch ./ -> Grep in same dir again n again
+
+Adder to Subtractor https://www.quora.com/in/How-can-a-full-adder-be-converted-to-a-full-subtractor-with-theaddition-of-one-inverter-circuit
+
+SIMULATOR:
+  http://vlsi.pro/verilog-timescales/ -> Time Scale
+  `timescale 1ns/1ps means , Whatever times you mentioned in verilog code will be taken in ns.
+  eg. #22; //22 ns
+  Resolution of 1ps means you can have
+  #0.001; // 0.001 ns / 1ps as smallest representation of the time.
+  #0.000123; // this means 0 ns
+  Like we have to collect Rs100 and the smallest value of RS should be Rs 1.So if you give 50 paise you will noy count it in RS 100. 1ns/1ps is similar to 100/1
+  https://hdvacademy.blogspot.in/p/index.html
+  
+  
+Useful links
+  https://www.thoughtco.com || http://zetcode.com/lang/tcl/strings/ 
+  https://github.com/learning-dev || https://learnpythonthehardway.org
+  http://www.thegeekstuff.com/category/sed/ || https://cracklinux.blogspot.in/search/label/Shell%20Script%20Exercises 
+  http://www.dreamsyssoft.com/unix-shellscripting/functions-tutorial.php 
+  https://www.shellscript.sh/interactive.html || https://www.javatpoint.com/cpointers 
+  http://www.cquestions.com/2010/10/c-interview-questions-and-answers.html 
+  http://asicinterview.blogspot.com/search/label/ASIC%20SystemVerilog 
+  https://vlsimaster.wordpress.com/category/cprogram-to-find-the-address-of-a-variable/ 
+  http://www.techmasterplus.com/verilog/verilog-mealy0x01.php ||
+  http://vim.wikia.com || http://theunixshell.blogspot.in/ 
+  https://www.scribd.com/doc/2180422/Perl-InterviewQuestion#logout Perl Question
+
+SDAccel https://gitenterprise.xilinx.com/heeran/apps/tree/2017.1_dev
+Verilog https://www.youtube.com/user/MrVerilog/videos
+AXI https://www.youtube.com/watch?v=7dtfql3962I
