@@ -95,6 +95,11 @@ egrep -ri 'svtb' --include=\*.ipbatch ./ -> Grep in same dir again n again
 
 cp -rfL <source_path> <dest_path> , where L -> for copying the soft links
 
+# Find string and replace whole line
+	sed -i '/check_run 1/c\# synthesis -check_run 0' $i
+
+# Find between pattern
+sed -n '/Sequential  Domain/,/Sequential  Domains/p;/Sequential : Clock Domains/q' <file_name>
 
 Adder to Subtractor https://www.quora.com/in/How-can-a-full-adder-be-converted-to-a-full-subtractor-with-theaddition-of-one-inverter-circuit
 
@@ -127,3 +132,13 @@ Verilog https://www.youtube.com/user/MrVerilog/videos
 AXI https://www.youtube.com/watch?v=7dtfql3962I
 System C: http://homepages.cae.wisc.edu/~ece734/SystemC/
 Reading : https://www.csl.cornell.edu/courses/ece4750/
+
+Verilog
+  https://systemverilogdesign.com/2019/06/29/asynchronous-fifo/
+  https://alchitry.com/verilog
+  https://hdlbits.01xz.net/wiki/Main_Page
+  https://syssec.ethz.ch/content/dam/ethz/special-interest/infk/inst-infsec/system-security-group-dam/education/Digitaltechnik_14/09_Verilog_Sequential.pdf
+  https://verilogguide.readthedocs.io/en/latest/verilog/vvd.html
+  https://www.systemverilog.io/
+  https://docs.verilogtorouting.org/en/latest/tutorials/timing_simulation/
+  https://www.javatpoint.com/verilog-parameters
