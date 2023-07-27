@@ -1,4 +1,4 @@
-colorscheme evening
+v ~/colorscheme evening
 set hlsearch
 set tabstop=2
 set number
@@ -21,3 +21,12 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
+
+
+set backspace=2
+if has("gui_running")
+  colorscheme evening 
+else
+	noremap! <C-?> <C-h>
+  colorscheme ron 
+endif
