@@ -1,0 +1,111 @@
+Website - https://online.visual-paradigm.com/diagrams/features/circuit-diagram-software/
+URL - https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=CircuitDiagram&width=11&height=8.5&unit=inch
+
+
+##########  For Flop
+<shape aspect="variable" h="80" name="D Type Flip-Flop" strokewidth="inherit" w="100">
+  <connections>
+    <constraint name="D" perimeter="0" x="0" y="0.25" />
+    <constraint name="E" perimeter="0" x="0" y="0.75" />
+    <constraint name="Q" perimeter="0" x="1" y="0.25" />
+  </connections>
+  <background>
+    <rect h="80" w="60" x="20" y="0" />
+  </background>
+  <foreground>
+    <fillstroke />
+    <path>
+      <move x="0" y="20" />
+      <line x="20" y="20" />
+      <move x="0" y="60" />
+      <line x="20" y="60" />
+      <move x="80" y="20" />
+      <line x="100" y="20" />
+      <move x="71" y="55" />
+      <move x="20" y="55" />
+      <line x="30" y="60" />
+      <line x="20" y="65" />
+      <move x="80" y="60" />
+    </path>
+    <stroke />
+    <text align="center" str="D" valign="bottom" x="25" y="25" />
+    <text align="center" str="Q" valign="bottom" x="75" y="25" />
+  </foreground>
+</shape>
+
+
+-------------------------------------------------------------------------
+##########   Memory with R,W & Clk port
+<shape aspect="variable" h="100" name="JK Flip-Flop With SR" strokewidth="inherit" w="100">
+  <connections>
+    <constraint name="J" perimeter="0" x="0" y="0.3" />
+    <constraint name="E" perimeter="0" x="0" y="0.5" />
+    <constraint name="K" perimeter="0" x="0" y="0.7" />
+    <constraint name="Q" perimeter="0" x="1" y="0.3" />
+    <constraint name="S" perimeter="0" x="0.5" y="0" />
+    <constraint name="R" perimeter="0" x="0.5" y="1" />
+  </connections>
+  <background>
+    <rect h="80" w="60" x="20" y="10" />
+  </background>
+  <foreground>
+    <fillstroke />
+    <path>
+      <move x="0" y="30" />
+      <line x="20" y="30" />
+      <move x="0" y="70" />
+      <line x="20" y="70" />
+      <move x="80" y="30" />
+      <line x="100" y="30" />
+      <move x="80" y="70" />
+      <move x="20" y="45" />
+      <line x="30" y="50" />
+      <line x="20" y="55" />
+      <move x="0" y="50" />
+      <line x="20" y="50" />
+      <move x="50" y="0" />
+    </path>
+    <stroke />
+    <text align="center" str="R" valign="bottom" x="25" y="35" />
+    <text align="center" str="W" valign="bottom" x="25" y="75" />
+    <text align="center" str="Q" valign="bottom" x="75" y="35" />
+  </foreground>
+</shape>
+
+-------------------------------------------------------------------------
+########## For Memory Black Box
+<shape aspect="variable" h="80" name="D Type Flip-Flop" strokewidth="inherit" w="100">
+  <connections>
+    <constraint name="D" perimeter="0" x="0" y="0.25" />
+    <constraint name="E" perimeter="0" x="0" y="0.75" />
+    <constraint name="Q" perimeter="0" x="1" y="0.25" />
+    <constraint name="Qneg" perimeter="0" x="1" y="0.75" />
+  </connections>
+  <background>
+    <rect h="80" w="60" x="20" y="0" />
+  </background>
+  <foreground>
+    <fillstroke />
+    <path>
+      <move x="0" y="20" />
+      <line x="20" y="20" />
+      <move x="0" y="60" />
+      <line x="20" y="60" />
+      <move x="80" y="20" />
+      <line x="100" y="20" />
+      <move x="71" y="55" />
+      <move x="20" y="55" />
+      <line x="30" y="60" />
+      <line x="20" y="65" />
+      <move x="80" y="60" />
+    </path>
+    <stroke />
+    <text align="center" str="Din" valign="bottom" x="30" y="25" />
+    <text align="center" str="Dout" valign="bottom" x="66" y="25" />
+    <text align="center" str="Sync Mem" valign="bottom" x="50" y="75" />
+  </foreground>
+</shape>
+
+-------------------------------------------------------------------------
+########## 
+ 
