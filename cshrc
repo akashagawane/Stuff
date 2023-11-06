@@ -1,3 +1,17 @@
+setenv work '<DIR_PATH>'
+alias p4clnd 'p4 clean ...; find . -type d -empty -delete'
+alias vi 'vim'
+alias v 'gvim'
+alias . 'pwd'
+set prompt = '%B%c@ %h > %b'
+set autolist = ambiguous
+alias mkcd 'mkdir -p \!*; cd \!*'
+set complete = enhance
+
+
+########################## VIMRC
+
+
 syntax on
 set hlsearch
 set tabstop=2
@@ -33,3 +47,8 @@ else
 	nnoremap <C-Right> :tabnext<CR>
   colorscheme ron 
 endif
+
+
+
+
+
