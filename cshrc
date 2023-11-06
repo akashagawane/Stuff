@@ -1,4 +1,4 @@
-v ~/colorscheme evening
+syntax on
 set hlsearch
 set tabstop=2
 set number
@@ -8,7 +8,7 @@ set showmatch
 set incsearch
 set nocompatible
 set backspace=indent,eol,start
-syntax on
+noremap! <C-?> <C-h>
 
 noremap <leader>1 1gt
 noremap! <C-?> <C-h>
@@ -26,7 +26,10 @@ noremap <leader>0 :tablast<cr>
 set backspace=2
 if has("gui_running")
   colorscheme evening 
+  set mouse=a
 else
 	noremap! <C-?> <C-h>
+	nnoremap <C-Left> :tabprevious<CR>
+	nnoremap <C-Right> :tabnext<CR>
   colorscheme ron 
 endif
